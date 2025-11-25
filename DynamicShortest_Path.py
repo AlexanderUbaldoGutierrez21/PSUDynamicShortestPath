@@ -55,17 +55,17 @@ paths = [
 ]
 
 # PART (A): FIFO VERIFICATION
-print("## Part (a): FIFO Principle Verification")
+print("## PART (A): FIFO PRINCIPLE VERIFICATION")
 for (from_node, to_node), func in links.items():
     status = check_fifo(func, f"{from_node}->{to_node}")
     print(f"* Link {from_node}->{to_node}: FIFO: {status}.")
-print("Conclusion: The FIFO principle is satisfied for ALL links in the network.\n")
+print("CONCLUSION: THE FIFO PRINCIPLE IS SATISFIED FOR ALL LINKS IN THE NETWORK.\n")
 
 # PART (B): SHORTEST PATHS
-print("## Part (b): Shortest Paths from Node 1 to Node 4")
+print("## PART (B): SHORTEST PATHS FROM NODE 1 TO NODE 4")
 departure_times = [0, 2, 10]
 for t in departure_times:
-    print(f"* Departure Time t={t}:")
+    print(f"* DEPARTURE TIME t={t}:")
     path_times = []
     for path in paths:
         tt = total_travel_time(path, t)
@@ -73,12 +73,12 @@ for t in departure_times:
         print(f"    - Path {path}: Travel Time = {tt}.")
     # FIND SHORTEST
     shortest = min(path_times, key=lambda x: x[1])
-    print(f"    - Shortest Path: {shortest[0]} with Travel Time = {shortest[1]}.\n")
+    print(f"    - SHORTEST PATH: {shortest[0]} WITH TRAVEL TIME = {shortest[1]}.\n")
 
 # PART (C): PATH TRAVEL TIME EQUALITY
-print("## Part (c): Path Travel Time Equality")
+print("## PART (C): PATH TRAVEL TIME EQUALITY")
 print("Path A: [1, 2, 4] Total Time T_A(t) = 3t + 6")
 print("Path B: [1, 3, 4] Total Time T_B(t) = 15")
-print("Setting T_A(t) = T_B(t): 3t + 6 = 15")
-print("Solving for t: t = 3")
-print("The travel times on paths [1, 2, 4] and [1, 3, 4] are equal for a departure time of t = 3.")
+print("SETTING T_A(t) = T_B(t): 3t + 6 = 15")
+print("SOLVING FOR t: t = 3")
+print("THE TRAVEL TIMES ON PATHS [1, 2, 4] AND [1, 3, 4] ARE EQUAL FOR A DEPARTURE TIME OF t = 3.")
