@@ -13,7 +13,7 @@ def T34(t):
 def T24(t):
     return 2 + t
 
-def T32(t):
+def T23(t):
     return max(8 - t / 2, 1)
 
 # NETWORK STRUCTURE: DICT OF LINKS { (FROM, TO): FUNCTION }
@@ -22,7 +22,7 @@ links = {
     (1, 2): T12,
     (3, 4): T34,
     (2, 4): T24,
-    (3, 2): T32
+    (2, 3): T23
 }
 
 # FUNCTION TO CHECK FIFO FOR A LINK
@@ -51,7 +51,7 @@ def total_travel_time(path, departure_time):
 paths = [
     [1, 2, 4],
     [1, 3, 4],
-    [1, 3, 2, 4]
+    [1, 2, 3, 4]
 ]
 
 # PART (A): FIFO VERIFICATION
